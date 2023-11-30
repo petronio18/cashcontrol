@@ -1,0 +1,11 @@
+/* Configurar fonte 
+   Centralizar aviso 
+   alinha buttao 
+*/
+ul{
+   top: 130%;
+   left: -67px;
+   margin-top: var(--bs-dropdown-spacer);
+}
+
+
