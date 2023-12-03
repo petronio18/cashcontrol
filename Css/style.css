@@ -19,7 +19,7 @@
     .divTable{
       padding: 30px;
     }
-    main{
+    main ,section {
       color: white;
       font-size: large;
     }
