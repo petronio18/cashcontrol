@@ -76,41 +76,44 @@
 
   <div class="container mt-5">
     <h1 class="mb-4">Metas e Orçamento</h1>
-
-      <!-- Seção para adicionar nova meta -->
-      <div>
-          <h2>Adicionar Nova Meta</h2>
-          <form id="formMeta">
-              <div class="mb-3">
-                  <label for="nomeMeta" class="form-label">Nome da Meta</label>
-                  <input type="text" class="form-control" id="nomeMeta" placeholder="Digite o nome da meta" required>
-              </div>
-              <div class="mb-3">
-                  <label for="valorMeta" class="form-label">Valor da Meta</label>
-                  <input type="number" class="form-control" id="valorMeta" placeholder="Digite o valor da meta" required>
-              </div>
-              <div class="mb-3">
-                  <label for="taxaEconomia" class="form-label">Taxa de Economia por Mês</label>
-                  <input type="number" class="form-control" id="taxaEconomia" placeholder="Digite a taxa de economia" required>
-              </div>
-              <button type="button" class="btn btn-success" onclick="adicionarMeta()">Adicionar Meta</button>
-          </form>
-      </div>
-
-      <!-- Caixas de Metas -->
-      <div class="row" id="caixasMetas">
-          <!-- Conteúdo das metas aqui... -->
-      </div>
+    <div>
+      <h2>Adicionar Nova Meta</h2>
+      <form id="formMeta">
+          <div class="mb-3">
+              <label for="nomeMeta" class="form-label">Nome da Meta</label>
+              <input type="text" class="form-control" id="nomeMeta" placeholder="Digite o nome da meta" required>
+          </div>
+          <div class="mb-3">
+              <label for="valorMeta" class="form-label">Valor da Meta</label>
+              <input type="number" class="form-control" id="valorMeta" placeholder="Digite o valor da meta" required>
+          </div>
+          <div class="mb-3">
+              <label for="taxaEconomia" class="form-label">Valor que vai poupar</label>
+              <input type="number" class="form-control" id="taxaEconomia" placeholder="Digite a taxa de economia" required>
+          </div>
+          <button type="button" class="btn btn-success" onclick="adicionarMeta()">Adicionar Meta</button>
+      </form>
   </div>
 
-    <div class="row" id="caixasMetas">
-    </div>
+  <!-- Caixas de Metas -->
+  <div class="row" id="caixasMetas">
+      <!-- Conteúdo das metas aqui... -->
+  </div>
+</div>
+
+<div class="row" id="caixasMetas">
+</div>
+     
 </div>
 
 
 <script>
-  
   const metas = [];
+
+  // Carregar metas salvas ao carregar a página
+  window.onload = function () {
+      carregarMetasSalvas();
+  };
 
   // Função para adicionar uma nova meta
   function adicionarMeta() {
@@ -125,6 +128,7 @@
       };
 
       metas.push(novaMeta);
+      salvarMetasNoLocalStorage();
       atualizarMetas();
   }
 
@@ -136,10 +140,23 @@
 
   // Função para calcular o tempo estimado para atingir a meta
   function calcularTempoEstimado(valorMeta, taxaEconomia) {
-      // Supondo que o usuário economiza a mesma quantia todos os meses
       const economiaMensal = taxaEconomia;
       const tempoEstimado = Math.ceil(valorMeta / economiaMensal);
       return tempoEstimado;
+  }
+
+  // Função para salvar as metas no localStorage
+  function salvarMetasNoLocalStorage() {
+      localStorage.setItem('metas', JSON.stringify(metas));
+  }
+
+  // Função para carregar as metas salvas do localStorage
+  function carregarMetasSalvas() {
+      const metasSalvas = localStorage.getItem('metas');
+      if (metasSalvas) {
+          metas.push(...JSON.parse(metasSalvas));
+          atualizarMetas();
+      }
   }
 
   // Função para atualizar as caixas de metas na tela
