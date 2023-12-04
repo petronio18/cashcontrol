@@ -1,0 +1,22 @@
+
+/* Estilo para os cartões de notícias */
+.card {
+    width: 22rem; /* Largura do cartão */
+    margin: 20px; /* Espaçamento entre os cartões */
+  }
+  
+  /* Alinhar os cartões em linha e ajustar o espaço entre eles */
+  #dados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: auto;
+  }
+  
+  /* Limpar margens e preenchimento padrão dos elementos do cartão */
+  .card-img-top,
+  .card-body {
+    margin: 0;
+    padding: 10px;
+  }
+  
