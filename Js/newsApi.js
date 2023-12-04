@@ -1,20 +1,15 @@
-fetch('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=7a100e41622f4c288d3d6a7cfbda878b')
+fetch('https://api.worldnewsapi.com/search-news?api-key=8b8a756eee6f4f65b1c5229e11b47d0d&text=tesla')
   .then(response => response.json())
   .then(data => {
-    // Faça algo com os dados obtidos, como exibi-los na tela
     const elementoDados = document.getElementById('dados');
 
-    // Limpa o conteúdo anterior
     elementoDados.innerHTML = '';
 
-    // Verifica se há notícias
     if (data.articles && data.articles.length > 0) {
-      // Itera sobre as notícias e cria um cartão Bootstrap para cada notícia
       data.articles.forEach(article => {
         const divNoticia = document.createElement('div');
         divNoticia.classList.add('card', 'mb-3');
 
-        // Adiciona a imagem da notícia (se disponível)
         if (article.urlToImage) {
           const img = document.createElement('img');
           img.src = article.urlToImage;
@@ -25,13 +20,11 @@ fetch('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=
         const divCardBody = document.createElement('div');
         divCardBody.classList.add('card-body');
 
-        // Adiciona o título da notícia
         const titulo = article.title;
         const tituloElemento = document.createElement('h5');
         tituloElemento.classList.add('card-title');
         tituloElemento.textContent = titulo;
 
-        // Adiciona o autor da notícia (se disponível)
         if (article.author) {
           const autorElemento = document.createElement('p');
           autorElemento.classList.add('card-text');
@@ -39,7 +32,6 @@ fetch('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=
           divCardBody.appendChild(autorElemento);
         }
 
-        // Adiciona a descrição da notícia (se disponível)
         if (article.description) {
           const descricaoElemento = document.createElement('p');
           descricaoElemento.classList.add('card-text');
@@ -47,22 +39,19 @@ fetch('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=
           divCardBody.appendChild(descricaoElemento);
         }
 
-        // Adiciona um link para a notícia completa
         const linkElemento = document.createElement('a');
         linkElemento.href = article.url;
-        linkElemento.target = '_blank'; // Abre o link em uma nova aba
+        linkElemento.target = '_blank';
         linkElemento.classList.add('btn', 'btn-primary');
         linkElemento.textContent = 'Ver Notícia Completa';
         divCardBody.appendChild(linkElemento);
 
-        // Adiciona todos os elementos ao cartão
         divCardBody.appendChild(tituloElemento);
         divNoticia.appendChild(divCardBody);
 
         elementoDados.appendChild(divNoticia);
       });
     } else {
-      // Caso não haja notícias
       const mensagem = document.createElement('p');
       mensagem.textContent = 'Nenhuma notícia encontrada.';
       elementoDados.appendChild(mensagem);
