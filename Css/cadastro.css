@@ -30,3 +30,8 @@
     border-bottom-right-radius: 15px;
     }
     }
+     a {
+        text-decoration: none;
+        color: black;
+      }
+      

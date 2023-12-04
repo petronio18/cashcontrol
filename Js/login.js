@@ -4,12 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const email = document.getElementById('typeEmailX').value;
         const password = document.getElementById('typePasswordX').value;
 
-        // Simulando dados do usuário armazenados no localStorage
+        // Verifica se os campos estão preenchidos
+        if (!email || !password) {
+            alert('Por favor, preencha todos os campos antes de fazer login.');
+            return; 
+        }
+
+        
         const storedUser = JSON.parse(localStorage.getItem('userData'));
 
         if (storedUser && storedUser.email === email && storedUser.password === password) {
             alert('Login bem-sucedido! Redirecionando...');
-             window.location.href = 'index.html';
+            window.location.href = 'index.html';
         } else {
             alert('Credenciais inválidas. Tente novamente.');
         }
