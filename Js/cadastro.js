@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const firstName = document.getElementById('form3Examplev2').value;
         const lastName = document.getElementById('form3Examplev3').value;
         const email = document.getElementById('form3Examplea9').value;
-        const profession = document.getElementById('form3Examplea9').value;
+        const profession = document.getElementById('form3Examplea12').value;
         const age = document.getElementById('form3Examplev5').value;
-        const monthlyIncome = document.getElementById('form3Examplev5').value;
+        const monthlyIncome = document.getElementById('form3Examplev11').value;
         const password = document.getElementById('form3ExamplePassword').value;
 
         // Verifica se os campos obrigatórios estão preenchidos
