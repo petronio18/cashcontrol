@@ -3,115 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Css/style.css">
-    <link rel="stylesheet" href="/Css/contabancaria.css">
+    <link rel="stylesheet" href="/Css/login.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
-<body >
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Cash control</a>
-      
-      
-      <li class="nav-item dropdown">
-        <a class="navbar-brand dropdown-toggle" href="#" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" id="perfilLink"><i class='bx bx-user-circle'>Perfil</i></a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="login.html"><i class='bx bx-log-in'>Login</i></a></li>
-            <li><a class="dropdown-item"  href="Cadastro.html"><i class='bx bxs-user-account'>Cadastro</i></a></li>
-            <li><a class="dropdown-item" href="conta.html"><i class='bx bx-user'>Conta</i></a></li>
-        </ul>
-      </li>
-      <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Cash Crontrol</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"><i class='bx bx-home'>Home</i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="faq.html"><i class='bx bx-support'>faq</i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active"  aria-current="page" href="noticias.html"><i class="bx bx-news">Noticias</i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active"  aria-current="page" href="metas.html"><i class='bx bxs-bullseye'>Metas e Orçamento</i></a>
-            </li>
-          </ul>
-         
-        </div>
-      </div>
-    </div>
-  </nav>
-      <main class="vh-100 gradient-custom">
-        <!-- <section >
-          <canvas id="myChart" width="400" height="200"></canvas>
-  
-        </section> -->
-        <div class="resume">
-        <div>
-          Entradas: R$
-          <span class="incomes">0.00</span>
-        </div>
-        <div>
-          Saídas: R$
-          <span class="expenses">0.00</span>
-        </div>
-        <div>
-          Total: R$
-          <span class="total">0.00</span>
-        </div>
-      </div>
-      <div class="newItem">
-        <div class="divDesc">
-          <label for="desc">Descrição</label>
-          <input type="text" id="desc" placeholder="EX:Cerveja no Bar do Ze " />
-        </div>
-        <div class="divAmount">
-          <label for="amount">Valor</label>
-          <input type="number" placeholder="EX: 100" id="amount" />
-        </div>
-        <div class="divType">
-          <label for="type">Tipo</label>
-          <select id="type">
-            <option>Entrada</option>
-            <option>Saída</option>
-          </select>
-        </div>
-        <button id="btnNew">Incluir</button>
-      </div>
-      <div class="divTable">
-        <table>
-          <thead>
-            <tr>
-              <th>Descrição</th>
-              <th class="columnAmount">Valor</th>
-              <th class="columnType">Tipo</th>
-              <th class="columnAction"></th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
+<body class="vh-100 gradient-custom">
+        <section >
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                  <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
           
-        </table>
+                      <div class="mb-md-5 mt-md-4 pb-5">
+          
+                        <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                        <p class="text-white-50 mb-5">Por favor faça seu login com email e senha!</p>
+          
+                        <div class="form-outline form-white mb-4">
+                          <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                          <label class="form-label" for="typeEmailX">Email</label>
+                        </div>
+          
+                        <div class="form-outline form-white mb-4">
+                          <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                          <label class="form-label" for="typePasswordX">Senha</label>
+                        </div>
+          
+                        <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="conta.html">Deseja recuperar sua senha?</a></p>
+          
+                        <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+          
+                        <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                          <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                          <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                          <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                        </div>
+          
+                      </div>
+          
+                      <div>
+                        <p class="mb-0">Crie sua conta agora? <a href="Cadastro.html" class="text-white-50 fw-bold">Cadastro</a>
+                        </p>
+                      </div>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         
-      </main>
+      <script src="Js/login.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-      
-    
-     
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="Js/contabancaria.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

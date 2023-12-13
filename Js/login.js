@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (storedUser && storedUser.email === email && storedUser.password === password) {
             alert('Login bem-sucedido! Redirecionando...');
-            window.location.href = 'index.html';
+            window.location.href = 'login.html';
         } else {
             alert('Credenciais inválidas. Tente novamente.');
         }
