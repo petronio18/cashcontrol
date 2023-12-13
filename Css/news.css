@@ -19,4 +19,9 @@
     margin: 0;
     padding: 10px;
   }
+  .fixed-height {
+    height: 200px; /* ou a altura desejada em pixels */
+    object-fit: cover; /* para manter a proporção da imagem e cobrir a área especificada */
+  }
+  
   
