@@ -8,9 +8,26 @@
     <link rel="stylesheet" href="/Css/style.css">
     <link rel="stylesheet" href="/Css/contabancaria.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
+    <style>
+      main{
+        display: flex;
+        flex-direction: row;
+        flex-flow: row-reverse;
+        
+      }
+      .bemvindo{
+        padding-top: 40px;
+        font-size: large;
+        font-size: 20px;
+        font-weight: bold;
+        color: antiquewhite
+      }
+     
+        </style>
+  
 </head>
-<body >
+
+<body class="vh-100 gradient-custom">
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -52,57 +69,70 @@
       </div>
     </div>
   </nav>
-      <main class="vh-100 gradient-custom">
-        <!-- <section >
-          <canvas id="myChart" width="400" height="200"></canvas>
   
-        </section> -->
-        <div class="resume">
-        <div>
-          Entradas: R$
-          <span class="incomes">0.00</span>
-        </div>
-        <div>
-          Saídas: R$
-          <span class="expenses">0.00</span>
-        </div>
-        <div>
-          Saldo: R$
-          <span class="total">0.00</span>
-        </div>
+  <div class="bemvindo bx-heading mt-5  justify-content-start">
+    
+    <h1 class="text-center">Bem vindo ao Cash Control</h1>
+    <p class="text-lg-center">Bem-vindo ao Cash Control  Seu parceiro confiável para o gerenciamento financeiro pessoal!<br> Nosso site e aplicativo foram desenvolvidos pensando em simplificar sua vida financeira,<br>
+       proporcionando uma experiência intuitiva e eficiente.</p>
+  </div>
+  <main class="  justify-content-center ">        
+        
+    
+    <div class="chart-container ">
+          <canvas id="myChart" width="400" height="200"></canvas>
       </div>
-      <div class="newItem">
-        <div class="divDesc">
-          <label for="desc">Descrição</label>
-          <input type="text" id="desc" placeholder="EX:Cerveja no Bar do Ze " />
-        </div>
-        <div class="divAmount">
-          <label for="amount">Valor</label>
-          <input type="number" placeholder="EX: 100" id="amount" />
-        </div>
-        <div class="divType">
-          <label for="type">Tipo</label>
-          <select id="type">
-            <option>Entrada</option>
-            <option>Saída</option>
-          </select>
-        </div>
-        <button id="btnNew">Incluir</button>
+  
+      <div class="table-container" >
+         
+          <div class="resume">
+            <div>
+              Entradas: R$
+              <span class="incomes">0.00</span>
+            </div>
+            <div>
+              Saídas: R$
+              <span class="expenses">0.00</span>
+            </div>
+            <div>
+              Saldo: R$
+              <span class="total">0.00</span>
+            </div>
+          </div>
+          <div class="newItem">
+            <div class="divDesc">
+              <label for="desc">Descrição</label>
+              <input type="text" id="desc" placeholder="EX:Cerveja no Bar do Ze " />
+            </div>
+            <div class="divAmount">
+              <label for="amount">Valor</label>
+              <input type="number" placeholder="EX: 100" id="amount" />
+            </div>
+            <div class="divType">
+              <label for="type">Tipo</label>
+              <select id="type">
+                <option>Entrada</option>
+                <option>Saída</option>
+              </select>
+            </div>
+            <button id="btnNew">Incluir</button>
+          </div>
+          <div class="divTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>Descrição</th>
+                  <th class="columnAmount">Valor</th>
+                  <th class="columnType">Tipo</th>
+                  <th class="columnAction"></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              
+            </table>
       </div>
-      <div class="divTable">
-        <table>
-          <thead>
-            <tr>
-              <th>Descrição</th>
-              <th class="columnAmount">Valor</th>
-              <th class="columnType">Tipo</th>
-              <th class="columnAction"></th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-          
-        </table>
+       
         
       </main>
 
@@ -115,3 +145,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
+

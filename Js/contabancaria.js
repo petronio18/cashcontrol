@@ -91,5 +91,67 @@ function getTotals() {
 const getItensBD = () => JSON.parse(localStorage.getItem("db_items")) ?? [];
 const setItensBD = () =>
   localStorage.setItem("db_items", JSON.stringify(items));
+// ... (seu código existente)
+
+// Função para criar e atualizar o gráfico
+function updateChart() {
+  const ctx = document.getElementById('myChart').getContext('2d');
+
+  const data = {
+      labels: ['Entradas', 'Saidas' ],
+      datasets: [{
+          data: [parseFloat(incomes.innerHTML), parseFloat(expenses.innerHTML)],
+          backgroundColor: ['#36A2EB', '#FF6384'],
+      }]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+   
+    layout: {
+      padding: {
+        top: 20, // Adiciona um espaço entre o gráfico e o texto
+      },
+    },
+   
+  };
+
+
+  // Verifica se o gráfico já foi inicializado
+  if (window.myPieChart) {
+      // Atualiza os dados
+      window.myPieChart.data = data;
+      window.myPieChart.update();
+  } else {
+      // Cria um novo gráfico
+      window.myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: data,
+          options: options
+      });
+  }
+}
+
+function loadItens() {
+  items = getItensBD();
+  tbody.innerHTML = "";
+  items.forEach((item, index) => {
+      insertItem(item, index);
+  });
+
+  getTotals();
+
+  // Atualiza o gráfico após a carga dos itens
+  updateChart();
+}
+
+// ... (seu código existente)
+
+// Chame a função para criar o gráfico quando a página for carregada
+window.onload = function () {
+  loadItens();
+  updateChart();
+};
 
 loadItens();
